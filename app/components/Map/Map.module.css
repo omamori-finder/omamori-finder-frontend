@@ -1,0 +1,4 @@
+/* Group elements which make up Kyushu for hover effect */
+.kyushuHoverGroup:hover path{
+    fill: #A1A1AA;
+}
