@@ -5,7 +5,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --filter-color: #808080;
+  --filter-text-color: #808080;
+  --filter-border-color: #bbbaba;
   --light-gray: #d3d3d3;
 }
 
@@ -55,7 +56,7 @@
   .filter-border-no-t {
     border-width: 1px;
     border-style: solid;
-    border-color: var(--filter-color);
+    border-color: var(--filter-border-color);
     border-top: 0px;
   }
 
@@ -63,7 +64,7 @@
   .filter-border-no-b {
     border-width: 1px;
     border-style: solid;
-    border-color: var(--filter-color);
+    border-color: var(--filter-border-color);
     border-bottom: 0px;
   }
 }
