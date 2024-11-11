@@ -71,7 +71,7 @@ const NavBar = () => {
                             </svg>
                         </div>
                     </div>
-                    <div className={`flex flex-col items-left text-base text-menu w-full`}>
+                    <div className={`flex flex-col items-left text-base w-full`}>
                         <Filter />
                         <a className="h-16 flex items-center hover:underline text-[var(--filter-text-color)]" href="/login">Login</a>
                         <a className="h-16 flex items-center hover:underline text-[var(--filter-text-color)]" href="/about">About</a>
