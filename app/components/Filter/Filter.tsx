@@ -30,7 +30,7 @@ const Filter = () => {
             <div className="relative bg-[var(--background)] hover:text-[var(--foreground)] transition-colors duration-300 md:w-full">
                 <div className="cursor-pointer z-40" onClick={setAreaClicked}>
                     <div className={`mb-0 pb-0 ${isAreaClicked ? 'filter-border-no-b' : 'transparent-border'}`}>
-                        <div className={`inline-grid grid-flow-col items-center h-16 gap-6 whitespace-normal pl-8 ${isAreaClicked ? 'text-[var(--foreground)]' : '' }`}>
+                        <div id="area-toggle-button" className={`inline-grid grid-flow-col items-center h-16 gap-6 whitespace-normal pl-8 ${isAreaClicked ? 'text-[var(--foreground)]' : '' }`}>
                             <div>Area</div>
                             <svg width="7" height="5" viewBox="0 0 7 5" className={`transition-transform duration-300 ${isAreaClicked ? 'rotate-[-90deg]' : ''}`}>
                                 <path d="M0 2.5L7 0v5L0 2.5z" fill="currentColor"></path>
@@ -39,7 +39,7 @@ const Filter = () => {
                     </div>
                 </div>
                 {isAreaClicked && (
-                    <div className={`z-50 absolute bg-[var(--background)] text-[var(--foreground)] px-8 pb-6 mt-0 pt-0 md:w-full max-h-80 overflow-y-auto ${isAreaClicked ? 'filter-border-no-t' : 'transparent-border'}`}> 
+                    <div id="area-dropdown" className={`z-50 absolute bg-[var(--background)] text-[var(--foreground)] px-8 pb-6 mt-0 pt-0 md:w-full max-h-80 overflow-y-auto ${isAreaClicked ? 'filter-border-no-t' : 'transparent-border'}`}> 
                         <label htmlFor="bAreaAll" className="grid grid-flow-col items-center gap-4 min-h-8 w-max cursor-pointer">
                             <input id="bAreaAll" type="radio" name="japan-regions"/>
                             <span>All</span>
@@ -82,7 +82,7 @@ const Filter = () => {
             <div className="relative hover:text-[var(--foreground)] transition-colors duration-300 min-w-min md:w-full">
                 <div className="cursor-pointer z-40" onClick={setLuckClicked}>
                     <div className={`mb-0 pb-0 ${isLuckClicked ? 'filter-border-no-b' : 'transparent-border'}`}>
-                        <div className={`inline-grid grid-flow-col items-center h-16 gap-6 whitespace-normal pl-8 ${isLuckClicked ? 'text-[var(--foreground)]' : '' }`}>
+                        <div id="luck-toggle-button" className={`inline-grid grid-flow-col items-center h-16 gap-6 whitespace-normal pl-8 ${isLuckClicked ? 'text-[var(--foreground)]' : '' }`}>
                             <div>Luck Type</div>
                             <svg width="7" height="5" viewBox="0 0 7 5" className={`transition-transform duration-300 ${isLuckClicked ? 'rotate-[-90deg]' : ''}`}>
                                 <path d="M0 2.5L7 0v5L0 2.5z" fill="currentColor"></path>
@@ -91,7 +91,7 @@ const Filter = () => {
                     </div>
                 </div>
                 {isLuckClicked && (
-                    <div className={`z-50 absolute bg-[var(--background)] text-[var(--foreground)] px-8 pb-6 mt-0 pt-0 md:w-full ${isLuckClicked ? 'filter-border-no-t' : 'transparent-border'}`}> 
+                    <div id="luck-dropdown" className={`z-50 absolute bg-[var(--background)] text-[var(--foreground)] px-8 pb-6 mt-0 pt-0 md:w-full ${isLuckClicked ? 'filter-border-no-t' : 'transparent-border'}`}> 
                         <label htmlFor="bLuckAll" className="grid grid-flow-col items-center gap-4 min-h-8 w-max cursor-pointer">
                             <input id="bLuckAll" type="radio" name="luck-types"/>
                             <span>All</span>
