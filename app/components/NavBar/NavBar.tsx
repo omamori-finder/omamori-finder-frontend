@@ -45,7 +45,7 @@ const NavBar = () => {
                     <a href="/">Omamori Finder</a>
                 </div>
                 <div className="hidden md:flex items-center space-x-8">
-                    <svg width="16" height="16" viewBox="0 0 16 16" onClick={toggleFilterPopup}>
+                    <svg id="filter-toggle-button" width="16" height="16" viewBox="0 0 16 16" onClick={toggleFilterPopup}>
                         <path d="M6.38 0A6.3 6.3 0 000 6.23a6.3 6.3 0 006.38 6.24c1.26 0 2.43-.36 3.41-.97L14.4 
                         16l1.6-1.56-4.55-4.43a6.1 6.1 0 001.31-3.78A6.3 6.3 0 006.38 0zm0 1.47c2.7 0 4.88 2.12 4.88 4.76A4.82 
                         4.82 0 016.38 11 4.82 4.82 0 011.5 6.23a4.82 4.82 0 014.88-4.76z" fill="currentColor"/>
@@ -53,7 +53,7 @@ const NavBar = () => {
                     <a className="hover:underline" href="/about">About</a>
                     <a className="hover:underline" href="/login">Login</a>
                 </div>
-                <div  className="md:hidden" onClick={toggleMenuPopup}>
+                <div id="mobile-menu-toggle-button" className="md:hidden" onClick={toggleMenuPopup}>
                     <svg width="24" height="24" viewBox="0 0 55 16">
                         <path fill="currentColor" d="M0 3h55V0H0zM0 16h55v-3H0z"></path>
                     </svg>
@@ -62,7 +62,7 @@ const NavBar = () => {
 
             {/* Toggling menu on mobile screens */}
             {menuIsOpen && (
-                <div className="fixed top-0 left-0 right-0 bottom-0 p-8 bg-[var(--background)] flex items-center justify-left text-[var(--filter-text-color)] w-full">
+                <div id="mobile-menu" className="fixed top-0 left-0 right-0 bottom-0 p-8 bg-[var(--background)] flex items-center justify-left text-[var(--filter-text-color)] w-full">
                     <div className="fixed top-8 right-10 flex items-center space-x-4">
                         <div onClick={toggleMenuPopup}>
                             <svg width="19" height="19" viewBox="0 0 19 19" className="text-[var(--filter-text-color)]">
@@ -81,7 +81,7 @@ const NavBar = () => {
 
             {/* Toggling Filter on non-mobile screens */}
             {filterIsOpen && (
-                <div>
+                <div id="filter">
                     <Filter />
                 </div>
             )}
