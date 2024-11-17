@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import NavBar from "./components/NavBar";
+import NavBar from "./_components/NavBar";
 
 const notoSans = localFont({
-  src: "./fonts/NotoSans-Regular.ttf",
+  src: "./_fonts/NotoSans-Regular.ttf",
   variable: "--font-noto-sans",
   weight: "100 900",
 });
