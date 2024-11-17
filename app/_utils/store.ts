@@ -1,20 +1,20 @@
 // Zustand state management
-import { create}  from "zustand";
+import { create } from "zustand";
 
 type Store = {
-    region: string,
-    luckType: string,
-    beliefType: string,
-    setRegion: (region: string) => void;
-    setLuckType: (luckType: string) => void;
-    setBeliefType: (beliefType: string) => void;
-}
+  area: string;
+  luckType: string;
+  beliefType: string;
+  setArea: (area: string) => void;
+  setLuckType: (luckType: string) => void;
+  setBeliefType: (beliefType: string) => void;
+};
 
 export const useStore = create<Store>((set) => ({
-    region: "all",
-    luckType: "all",
-    beliefType: "shinto",
-    setRegion: (region) => set({region}),
-    setLuckType: (luckType) => set({luckType}),
-    setBeliefType: (beliefType) => set({beliefType})
-}))
+  area: "all",
+  luckType: "all",
+  beliefType: "shinto",
+  setArea: (area) => set({ area }),
+  setLuckType: (luckType) => set({ luckType }),
+  setBeliefType: (beliefType) => set({ beliefType }),
+}));
