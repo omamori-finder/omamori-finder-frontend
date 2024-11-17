@@ -37,6 +37,11 @@ To start the development server, run the following command:
 npm run dev
 ```
 
+To test, run the following command:
+```
+npm run e2e
+```
+
 ### Contributing
 
 Please follow these steps to contribute:
