@@ -14,7 +14,6 @@
 - **Photo uploads**
 - **Responsive design**
 
-
 ### Prerequisites
 
 - node v18
@@ -26,20 +25,36 @@
 2. Navigate to the repository.
 
 3. Install all dependencies:
-    ```
-    npm install
-    ```
+   ```
+   npm install
+   ```
 
 ### Usage
 
+To test, run the following command:
+
+```
+npm run e2e
+```
+
+<br/>
+
 To start the development server, run the following command:
+
 ```
 npm run dev
 ```
 
-To test, run the following command:
+- Please note that _some elements may not work properly on first load_ after starting a dev server.
+- Reload the page to ensure all elements work as intended. Otherwise, please run a production build.
+
+<br/>
+
+To run a production build:
+
 ```
-npm run e2e
+npm build
+npm run start
 ```
 
 ### Contributing
@@ -49,9 +64,10 @@ Please follow these steps to contribute:
 1. Identify which feature you'd like to contribute to and navigate to the issue tab in the repository, or create the issue accordingly.
 
 2. Checkout to the new branch:
-    ```
-    git checkout -b feature-branch
-    ```
+
+   ```
+   git checkout -b feature-branch
+   ```
 
 3. Make your changes then commit them (please see commit style guide).
 
