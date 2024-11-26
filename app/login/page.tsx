@@ -25,7 +25,6 @@ export default function Login() {
               aria-label="email"
               placeholder="name@domain.com"
               data-test="login-email-field"
-              autoCapitalize="off"
               autoCorrect="off"
               className="w-full h-10 p-2 mb-6 border border-solid rounded focus:outline focus:outline-2 focus:outline-offset-2"
             />
@@ -43,7 +42,6 @@ export default function Login() {
               aria-label="password"
               placeholder="*****"
               data-test="login-password-field"
-              autoCapitalize="off"
               autoCorrect="off"
               className="w-full h-10 p-2 mb-6 border border-solid rounded focus:outline focus:outline-2 focus:outline-offset-2"
             />
