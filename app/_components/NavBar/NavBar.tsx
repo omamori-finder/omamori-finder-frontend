@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Filter from "../Filter";
+import Link from "next/link";
 
 const NavBar = () => {
   // md menu
@@ -24,9 +25,13 @@ const NavBar = () => {
     */
   const handleResize = () => {
     if (window.innerWidth >= 768) {
-      setMenuIsOpen(false);
+      if (menuIsOpen) {
+        setMenuIsOpen(false);
+      }
     } else if (window.innerWidth < 768) {
-      setFilterIsOpen(false);
+      if (filterIsOpen) {
+        setFilterIsOpen(false);
+      }
     }
   };
 
@@ -36,13 +41,13 @@ const NavBar = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [handleResize]);
 
   return (
     <div className="sticky top-0 right-0 z-[99999]">
       <nav className="bg-[var(--background)] w-full flex justify-between user-select-none px-10 pt-6 mb-6 items-center">
         <div>
-          <a href="/">Omamori Finder</a>
+          <Link href="/">Omamori Finder</Link>
         </div>
         <div className="hidden md:flex items-center space-x-8">
           <svg
@@ -51,6 +56,7 @@ const NavBar = () => {
             height="16"
             viewBox="0 0 16 16"
             onClick={toggleFilterPopup}
+            className="hover:text-blue-500"
           >
             <path
               d="M6.38 0A6.3 6.3 0 000 6.23a6.3 6.3 0 006.38 6.24c1.26 0 2.43-.36 3.41-.97L14.4 
@@ -59,12 +65,12 @@ const NavBar = () => {
               fill="currentColor"
             />
           </svg>
-          <a className="hover:underline" href="/about">
+          <Link href="/about" className="hover:underline">
             About
-          </a>
-          <a className="hover:underline" href="/login">
+          </Link>
+          <Link href="/login" className="hover:underline">
             Login
-          </a>
+          </Link>
         </div>
         <div
           id="mobile-menu-toggle-button"
@@ -104,18 +110,18 @@ const NavBar = () => {
           </div>
           <div className={`flex flex-col items-left text-base w-full`}>
             <Filter />
-            <a
+            <Link
               className="h-16 flex items-center hover:underline text-[var(--filter-text-color)]"
               href="/login"
             >
               Login
-            </a>
-            <a
+            </Link>
+            <Link
               className="h-16 flex items-center hover:underline text-[var(--filter-text-color)]"
               href="/about"
             >
               About
-            </a>
+            </Link>
           </div>
         </div>
       )}
