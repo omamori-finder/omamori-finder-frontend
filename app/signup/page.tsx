@@ -25,7 +25,6 @@ export default function Signup() {
               aria-label="email"
               placeholder="name@domain.com"
               data-test="signup-email-field"
-              autoCapitalize="off"
               autoCorrect="off"
               className="w-full h-10 p-2 mb-6 border border-solid rounded focus:outline focus:outline-2 focus:outline-offset-2"
             />
@@ -43,7 +42,6 @@ export default function Signup() {
               aria-label="password"
               placeholder="*****"
               data-test="signup-password-field"
-              autoCapitalize="off"
               autoCorrect="off"
               className="w-full h-10 p-2 mb-6 border border-solid rounded focus:outline focus:outline-2 focus:outline-offset-2"
             />
@@ -61,7 +59,6 @@ export default function Signup() {
               aria-label="username"
               placeholder="omamori"
               data-test="signup-username-field"
-              autoCapitalize="off"
               autoCorrect="off"
               className="w-full h-10 p-2 mb-6 border border-solid rounded focus:outline focus:outline-2 focus:outline-offset-2"
             />
