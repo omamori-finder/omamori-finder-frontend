@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useStore } from "@/app/_utils/store";
 
 const Filter = () => {
@@ -31,9 +31,36 @@ const Filter = () => {
     setIsAreaClicked(false);
   };
 
+  // Handle click outside dropdowns
+  const areaRef = useRef<HTMLDivElement>(null);
+  const luckRef = useRef<HTMLDivElement>(null);
+  const beliefRef = useRef<HTMLDivElement>(null);
+
+  const handleOutsideClick = (e: MouseEvent) => {
+    if (areaRef.current && !areaRef.current.contains(e.target as Node)) {
+      setIsAreaClicked(false);
+    }
+    if (luckRef.current && !luckRef.current.contains(e.target as Node)) {
+      setIsLuckClicked(false);
+    }
+    if (beliefRef.current && !beliefRef.current.contains(e.target as Node)) {
+      setIsBeliefClicked(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, []);
+
   return (
     <div className="relative bg-[var(--background)] block md:grid grid-cols-3 lg:grid-cols-4 gap-4 text-[var(--filter-text-color)] -ml-8 md:ml-0 md:pl-10">
-      <div className="relative bg-[var(--background)] hover:text-[var(--foreground)] transition-colors duration-300 md:w-full">
+      <div
+        className="relative bg-[var(--background)] hover:text-[var(--foreground)] transition-colors duration-300 md:w-full"
+        ref={areaRef}
+      >
         <div className="cursor-pointer z-40" onClick={setAreaClicked}>
           <div
             className={`mb-0 pb-0 ${
@@ -188,7 +215,10 @@ const Filter = () => {
           </div>
         )}
       </div>
-      <div className="relative hover:text-[var(--foreground)] transition-colors duration-300 min-w-min md:w-full">
+      <div
+        className="relative hover:text-[var(--foreground)] transition-colors duration-300 min-w-min md:w-full"
+        ref={luckRef}
+      >
         <div className="cursor-pointer z-40" onClick={setLuckClicked}>
           <div
             className={`mb-0 pb-0 ${
@@ -316,7 +346,10 @@ const Filter = () => {
           </div>
         )}
       </div>
-      <div className="relative hover:text-[var(--foreground)] transition-colors duration-300 md:w-full">
+      <div
+        className="relative hover:text-[var(--foreground)] transition-colors duration-300 md:w-full"
+        ref={beliefRef}
+      >
         <div className="cursor-pointer z-40" onClick={setBeliefClicked}>
           <div
             className={`mb-0 pb-0 ${
