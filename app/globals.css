@@ -6,6 +6,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --primary-button: #d3d3d3;
+  --card-border-color: #171717;
   --filter-text-color: #808080;
   --filter-border-color: #bbbaba;
   --light-gray: #d3d3d3;
@@ -67,6 +68,15 @@
     border-style: solid;
     border-color: var(--filter-border-color);
     border-bottom: 0px;
+  }
+
+  /* img hover transition */
+  img {
+    transition: transform 0.5s ease;
+  }
+
+  img:hover {
+    transform: scale(1.1);
   }
 }
 
