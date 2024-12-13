@@ -23,25 +23,25 @@ const NavBar = () => {
     when screen size is more than or equal to 768px, close the menu if open 
     when screen size is less than or equal to 768px, close the filter (menu) if open
     */
-  const handleResize = () => {
-    if (window.innerWidth >= 768) {
-      if (menuIsOpen) {
-        setMenuIsOpen(false);
-      }
-    } else if (window.innerWidth < 768) {
-      if (filterIsOpen) {
-        setFilterIsOpen(false);
-      }
-    }
-  };
 
   useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        if (menuIsOpen) {
+          setMenuIsOpen(false);
+        }
+      } else if (window.innerWidth < 768) {
+        if (filterIsOpen) {
+          setFilterIsOpen(false);
+        }
+      }
+    };
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [handleResize]);
+  }, [menuIsOpen, filterIsOpen]);
 
   return (
     <div className="sticky top-0 right-0 z-[99999]">

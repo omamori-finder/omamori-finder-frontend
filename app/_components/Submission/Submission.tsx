@@ -1,6 +1,5 @@
 "use client";
-import { FormEvent, useState, ChangeEvent } from "react";
-import { isValidGoogleMapsLink } from "@/app/_utils/validations";
+import { FormEvent, useState } from "react";
 
 const Submission = () => {
   const [shrineName, setShrineName] = useState<string>("");
@@ -14,6 +13,7 @@ const Submission = () => {
   // Handle submissions
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    console.log(image); // Placeholder
     return;
   };
 

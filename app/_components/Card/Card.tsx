@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type CardProps = {
   image: string;
   shrineName: string;
@@ -11,11 +13,12 @@ const Card = ({ image, shrineName, tag, link }: CardProps) => {
       <article>
         <div>
           <div className="aspect-square relative overflow-hidden rounded-lg">
-            <img
+            <Image
               src={image}
               alt={shrineName}
               loading="lazy"
               className="w-full h-full object-cover cursor-pointer rounded-lg"
+              layout="fill"
             />
           </div>
           <div>
@@ -35,17 +38,18 @@ const Card = ({ image, shrineName, tag, link }: CardProps) => {
   );
 };
 
-// const Test = ({ image, shrineName, tag, link }: CardProps) => {
+// const Test = () => {
 //   return (
 //     <li className="relative w-1/4">
 //       <article>
 //         <div>
 //           <div className="aspect-square relative overflow-hidden rounded-lg">
-//             <img
+//             <Image
 //               src="/omamori.jpg"
-//               alt={shrineName}
+//               alt="hi"
 //               loading="lazy"
 //               className="w-full h-full object-cover cursor-pointer"
+//               layout="fill"
 //             />
 //           </div>
 //           <div>
@@ -53,7 +57,7 @@ const Card = ({ image, shrineName, tag, link }: CardProps) => {
 //               <p className="flex h-5 order-1 px-3.5 py-0 border border-solid rounded-lg border-[var(--card-border-color)] items-center justify-center md:rounded-2xl md:h-7 md:min-w-24">
 //                 Good Luck
 //               </p>
-//               <a href={link} className="order-2 cursor-pointer">
+//               <a href="/" className="order-2 cursor-pointer">
 //                 ↗ Link
 //               </a>
 //             </div>
