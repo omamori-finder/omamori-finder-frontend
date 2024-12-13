@@ -17,6 +17,7 @@
 ### Prerequisites
 
 - node v18
+- yarn v1
 
 ### Installation
 
@@ -26,7 +27,7 @@
 
 3. Install all dependencies:
    ```
-   npm install
+   yarn
    ```
 
 ### Usage
@@ -34,7 +35,7 @@
 To test, run the following command:
 
 ```
-npm run e2e
+yarn e2e
 ```
 
 <br/>
@@ -42,7 +43,7 @@ npm run e2e
 To start the development server, run the following command:
 
 ```
-npm run dev
+yarn dev
 ```
 
 - Please note that _some elements may not work properly on first load_ after starting a dev server.
@@ -53,8 +54,8 @@ npm run dev
 To run a production build:
 
 ```
-npm build
-npm run start
+yarn build
+yarn start
 ```
 
 ### Contributing
