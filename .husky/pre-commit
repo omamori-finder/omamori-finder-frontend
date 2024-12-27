@@ -1,0 +1,10 @@
+# .husky/pre-commit
+
+yarn lint
+
+if [ $? -ne 0 ]; then
+  echo "🚨 Linting failed. Please fix the issues and try again."
+  exit 1
+else
+  echo "✅ Linting passed!"
+fi
