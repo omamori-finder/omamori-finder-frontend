@@ -25,6 +25,7 @@ const NavBar = () => {
     */
 
   useEffect(() => {
+    const test = 0;
     const handleResize = () => {
       if (window.innerWidth >= 768) {
         if (menuIsOpen) {
