@@ -33,6 +33,7 @@ const NavBar = () => {
       } else if (window.innerWidth < 768) {
         if (filterIsOpen) {
           setFilterIsOpen(false);
+          console.log("Hello");
         }
       }
     };
