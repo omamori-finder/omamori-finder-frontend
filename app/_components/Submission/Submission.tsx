@@ -13,8 +13,8 @@ const Submission = () => {
   // Handle submissions
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    console.log(image); // Placeholder
-    return;
+    // To do: Add fetching logic when backend is ready.
+    return image;
   };
 
   // Image changes
