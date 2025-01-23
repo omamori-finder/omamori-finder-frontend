@@ -1,6 +1,6 @@
-import Card from "../Card/Card";
+import OmamoriCard from "../OmamoriCard";
 
-const Cardfeed = () => {
+const OmamoriFeedContainer = () => {
   // Only for testing
   const testData = [
     { key: 1, shrineName: "Meiji Jingu", tag: "Good Luck" },
@@ -13,7 +13,7 @@ const Cardfeed = () => {
   return (
     <ul className="list-none pl-0 m-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       {testData.map((omamori) => (
-        <Card
+        <OmamoriCard
           key={omamori.key}
           shrineName={omamori.shrineName}
           tag={omamori.tag}
@@ -23,4 +23,4 @@ const Cardfeed = () => {
   );
 };
 
-export default Cardfeed;
+export default OmamoriFeedContainer;

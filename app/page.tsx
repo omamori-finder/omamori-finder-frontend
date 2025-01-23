@@ -1,11 +1,11 @@
 import Map from "./_components/Map";
-import Cardfeed from "./_components/Cardfeed";
+import OmamoriFeedContainer from "./_components/OmamoriFeedContainer";
 
 export default function Home() {
   return (
     <div>
       <Map />
-      <Cardfeed />
+      <OmamoriFeedContainer />
     </div>
   );
 }

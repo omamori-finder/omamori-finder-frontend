@@ -2,13 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 type CardProps = {
-  //image: string;
   shrineName: string;
   tag: string;
-  //link: string;
 };
 
-const Card = ({ shrineName, tag }: CardProps) => {
+const OmamoriCard = ({ shrineName, tag }: CardProps) => {
   return (
     <li className="relative">
       <article>
@@ -39,4 +37,4 @@ const Card = ({ shrineName, tag }: CardProps) => {
   );
 };
 
-export default Card;
+export default OmamoriCard;
