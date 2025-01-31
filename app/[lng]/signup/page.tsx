@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { FormEvent } from "react";
 
 export default function Signup() {
@@ -71,9 +72,9 @@ export default function Signup() {
         </div>
       </form>
       <div>
-        <a href="/login">
+        <Link href="/login">
           <p>Have an account? Login</p>
-        </a>
+        </Link>
       </div>
     </div>
   );
