@@ -1,8 +1,9 @@
 "use client";
+import Link from "next/link";
 import { FormEvent } from "react";
 
-export default function Login() {
-  // Handle login
+export default function Signup() {
+  // Handle signup
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     return;
@@ -14,7 +15,7 @@ export default function Login() {
         <div className="flex flex-col w-full">
           <div>
             <label
-              htmlFor="login-email-field"
+              htmlFor="signup-email-field"
               className="block mb-2 leading-none"
             >
               Email:
@@ -24,14 +25,14 @@ export default function Login() {
               type="email"
               aria-label="email"
               placeholder="name@domain.com"
-              data-test="login-email-field"
+              data-test="signup-email-field"
               autoCorrect="off"
               className="w-full h-10 p-2 mb-6 border border-solid rounded focus:outline focus:outline-2 focus:outline-offset-2"
             />
           </div>
           <div>
             <label
-              htmlFor="login-password-field"
+              htmlFor="signup-password-field"
               className="block mb-2 leading-none"
             >
               Password:
@@ -41,22 +42,39 @@ export default function Login() {
               type="password"
               aria-label="password"
               placeholder="*****"
-              data-test="login-password-field"
+              data-test="signup-password-field"
+              autoCorrect="off"
+              className="w-full h-10 p-2 mb-6 border border-solid rounded focus:outline focus:outline-2 focus:outline-offset-2"
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="signup-username-field"
+              className="block mb-2 leading-none"
+            >
+              Username:
+            </label>
+            <input
+              required
+              type="username"
+              aria-label="username"
+              placeholder="omamori"
+              data-test="signup-username-field"
               autoCorrect="off"
               className="w-full h-10 p-2 mb-6 border border-solid rounded focus:outline focus:outline-2 focus:outline-offset-2"
             />
           </div>
           <div>
             <button className="w-full bg-[var(--primary-button)] rounded-md py-2 px-4">
-              <div className="text-center">Log in</div>
+              <div className="text-center">Sign up</div>
             </button>
           </div>
         </div>
       </form>
       <div>
-        <a href="/signup">
-          <p>Sign up</p>
-        </a>
+        <Link href="/login">
+          <p>Have an account? Login</p>
+        </Link>
       </div>
     </div>
   );

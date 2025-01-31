@@ -3,7 +3,19 @@ import { useState, useEffect } from "react";
 import Filter from "../Filter";
 import Link from "next/link";
 
-const NavBar = () => {
+import { useTranslation } from "@/app/i18n/client";
+
+import { usePathname } from "next/navigation";
+import { Trans } from "react-i18next";
+
+const NavBar = ({ lng }: { lng: string }) => {
+  // language switcher
+  const { t } = useTranslation(lng, "filter");
+  const pathname = usePathname();
+
+  // get path name without the language code
+  const path = pathname.split("/").slice(2).join("/");
+
   // md menu
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
@@ -50,6 +62,26 @@ const NavBar = () => {
           <Link href="/">Omamori Finder</Link>
         </div>
         <div className="hidden md:flex items-center space-x-8">
+          <Trans i18nKey="languageSwitcher" t={t}>
+            {lng == "jp" ? (
+              <Link href={`/jp/${path}`}>
+                <strong>jp</strong>
+              </Link>
+            ) : (
+              <Link href={`/jp/${path}`}>
+                <span>jp</span>
+              </Link>
+            )}
+            {lng == "en" ? (
+              <Link href={`/en/${path}`}>
+                <strong>en</strong>
+              </Link>
+            ) : (
+              <Link href={`/en/${path}`}>
+                <span>en</span>
+              </Link>
+            )}
+          </Trans>
           <svg
             id="filter-toggle-button"
             width="16"
@@ -65,11 +97,12 @@ const NavBar = () => {
               fill="currentColor"
             />
           </svg>
+
           <Link href="/about" className="hover:underline">
-            About
+            {t("about")}
           </Link>
           <Link href="/login" className="hover:underline">
-            Login
+            {t("login")}
           </Link>
         </div>
         <div
@@ -90,6 +123,26 @@ const NavBar = () => {
           className="fixed top-0 left-0 right-0 bottom-0 p-8 bg-[var(--background)] flex items-center justify-left text-[var(--filter-text-color)] w-full"
         >
           <div className="fixed top-8 right-10 flex items-center space-x-4">
+            <Trans i18nKey="languageSwitcher" t={t}>
+              {lng == "jp" ? (
+                <Link href={`/jp/${path}`}>
+                  <strong>jp</strong>
+                </Link>
+              ) : (
+                <Link href={`/jp/${path}`}>
+                  <span>jp</span>
+                </Link>
+              )}
+              {lng == "en" ? (
+                <Link href={`/en/${path}`}>
+                  <strong>en</strong>
+                </Link>
+              ) : (
+                <Link href={`/en/${path}`}>
+                  <span>en</span>
+                </Link>
+              )}
+            </Trans>
             <div onClick={toggleMenuPopup}>
               <svg
                 width="19"
@@ -109,18 +162,18 @@ const NavBar = () => {
             </div>
           </div>
           <div className={`flex flex-col items-left text-base w-full`}>
-            <Filter />
+            <Filter t={t} />
             <Link
               className="h-16 flex items-center hover:underline text-[var(--filter-text-color)]"
               href="/login"
             >
-              Login
+              {t("login")}
             </Link>
             <Link
               className="h-16 flex items-center hover:underline text-[var(--filter-text-color)]"
               href="/about"
             >
-              About
+              {t("about")}
             </Link>
           </div>
         </div>
@@ -129,7 +182,7 @@ const NavBar = () => {
       {/* Toggling Filter on non-mobile screens */}
       {filterIsOpen && (
         <div id="filter">
-          <Filter />
+          <Filter t={t} />
         </div>
       )}
     </div>

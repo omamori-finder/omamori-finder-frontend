@@ -23,6 +23,14 @@
     },
     "types": ["cypress"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "cypress", "src", "cypress/**/*.ts",],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "cypress",
+    "src",
+    "cypress/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }
