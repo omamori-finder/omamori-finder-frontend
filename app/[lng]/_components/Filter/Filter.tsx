@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useStore } from "@/app/_utils/store";
+import { useStore } from "@/app/[lng]/_utils/store";
 
 const Filter = () => {
   // Filter choices
