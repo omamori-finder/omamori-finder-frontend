@@ -13,11 +13,18 @@ type Store = {
   setBeliefType: (beliefType: string) => void;
 };
 
+ // eslint-disable-next-line arrow-body-style
 export const useStore = create<Store>((set) => ({
   area: "all",
   luckType: "all",
   beliefType: "shinto",
-  setArea: (area) => set({ area }),
-  setLuckType: (luckType) => set({ luckType }),
-  setBeliefType: (beliefType) => set({ beliefType }),
+  setArea: (area) => {
+    set({ area })
+  },
+  setLuckType: (luckType) => {
+    set({ luckType })
+  },
+  setBeliefType: (beliefType) => {
+    set({ beliefType })
+  }
 }));
