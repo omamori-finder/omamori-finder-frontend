@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   title: "Omamori Finder",
 };
 
+// Pre-render language paths during build
 export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
 }
