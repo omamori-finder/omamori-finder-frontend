@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import Filter from "../Filter";
 import Link from "next/link";
 
-const NavBar = () => {
+// eslint-disable-next-line
+const NavBar = ({ lng }: { lng: string }) => {
   // md menu
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
