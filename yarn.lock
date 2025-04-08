@@ -591,6 +591,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@stylistic/eslint-plugin-jsx@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "@stylistic/eslint-plugin-jsx@npm:4.2.0"
+  dependencies:
+    eslint-visitor-keys: ^4.2.0
+    espree: ^10.3.0
+    estraverse: ^5.3.0
+    picomatch: ^4.0.2
+  peerDependencies:
+    eslint: ">=9.0.0"
+  checksum: 705b55b7c02eb997104ce1a50b66e3ad43977b3bb4809a7b437d94e1b8cb99e314632c629e22f4faa725abea55e94d7c27779fb8335e5d383cd62d9166cf2e10
+  languageName: node
+  linkType: hard
+
 "@stylistic/eslint-plugin@npm:^4.2.0":
   version: 4.2.0
   resolution: "@stylistic/eslint-plugin@npm:4.2.0"
@@ -4614,6 +4628,7 @@ __metadata:
     "@cypress/react18": ^2.0.1
     "@eslint/js": ^9.23.0
     "@stylistic/eslint-plugin": ^4.2.0
+    "@stylistic/eslint-plugin-jsx": ^4.2.0
     "@types/node": ^20
     "@types/react": ^18
     "@types/react-dom": ^18
