@@ -4,15 +4,15 @@ export const defaultNamespace = "translation";
 export const cookieName = "i18next";
 
 export function getOptions(
-  lng = fallbackLng,
-  namespaces: string | string[] = defaultNamespace
+    lng = fallbackLng,
+    namespaces: string | string[] = defaultNamespace
 ) {
-  return {
-    supportedLngs: languages,
-    fallbackLng,
-    lng,
-    fallbackNS: defaultNamespace,
-    defaultNamespace,
-    namespaces,
-  };
+    return {
+        supportedLngs: languages,
+        fallbackLng,
+        lng,
+        fallbackNS: defaultNamespace,
+        defaultNamespace,
+        namespaces
+    };
 }

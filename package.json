@@ -12,11 +12,6 @@
     "e2e": "start-server-and-test dev http://localhost:3000 \"cypress open --e2e\"",
     "prepare": "husky"
   },
-  "lint-staged": {
-    "**/*.{ts,tsx}": [
-      "yarn lint"
-    ]
-  },
   "dependencies": {
     "accept-language": "^3.0.20",
     "i18next": "^24.2.2",
@@ -32,6 +27,8 @@
   "devDependencies": {
     "@cypress/react18": "^2.0.1",
     "@eslint/js": "^9.23.0",
+    "@stylistic/eslint-plugin": "^4.2.0",
+    "@stylistic/eslint-plugin-jsx": "^4.2.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
