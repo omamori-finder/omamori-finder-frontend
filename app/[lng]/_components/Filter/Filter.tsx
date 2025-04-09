@@ -56,7 +56,7 @@ const Filter = () => {
     }, [])
 
     return (
-        <div 
+        <div
             className="relative bg-[var(--background)] block md:grid grid-cols-3 lg:grid-cols-4 gap-4 text-[var(--filter-text-color)] -ml-8 md:ml-0 md:pl-10"
         >
             <div

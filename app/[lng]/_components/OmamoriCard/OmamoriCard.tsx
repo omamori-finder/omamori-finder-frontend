@@ -22,7 +22,7 @@ const OmamoriCard = ({ shrineName, tag }: CardProps) => {
                     </div>
                     <div>
                         <div className="mt-3.5 flex flex-wrap justify-between relative select-none">
-                            <p 
+                            <p
                                 className="flex h-5 order-1 px-3.5 py-0 border border-solid rounded-lg border-[var(--card-border-color)] items-center justify-center md:rounded-2xl md:h-7 md:min-w-24"
                             >
                                 {tag}

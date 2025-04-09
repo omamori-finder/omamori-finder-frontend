@@ -19,9 +19,9 @@ const NavBar = ({ lng }: { lng: string }) => {
         setFilterIsOpen(!filterIsOpen)
     }
 
-    /* 
-     *handle resize to md 
-     *when screen size is more than or equal to 768px, close the menu if open 
+    /*
+     *handle resize to md
+     *when screen size is more than or equal to 768px, close the menu if open
      *when screen size is less than or equal to 768px, close the filter (menu) if open
      */
 

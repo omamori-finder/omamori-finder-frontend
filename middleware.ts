@@ -14,7 +14,7 @@ export const config = {
 export function middleware(req: NextRequest) {
     /*
      * Exclude paths with icon/chrome
-     * Checks if substring includes icon/chrome, for eg if checking for icon 
+     * Checks if substring includes icon/chrome, for eg if checking for icon
      * it will return positive if found and -1 if not found
      */
     const isIconPath = req.nextUrl.pathname.indexOf("icon") > -1
@@ -54,7 +54,7 @@ export function middleware(req: NextRequest) {
     }
 
     /**
-     * Detect language from referer url 
+     * Detect language from referer url
      *(url of page the user came from before arriving on the current page)
      */
     const hasRefererHeader = req.headers.has("referer")
