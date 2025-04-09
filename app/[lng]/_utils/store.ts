@@ -1,5 +1,5 @@
 // Zustand state management
-import { create } from "zustand"
+import { create } from "zustand";
 
 type Store = {
     area: string;
@@ -11,7 +11,7 @@ type Store = {
     setLuckType: (luckType: string) => void;
     // eslint-disable-next-line no-unused-vars
     setBeliefType: (beliefType: string) => void;
-}
+};
 
 // eslint-disable-next-line arrow-body-style
 export const useStore = create<Store>((set) => ({
@@ -19,12 +19,12 @@ export const useStore = create<Store>((set) => ({
     luckType: "all",
     beliefType: "shinto",
     setArea: (area) => {
-        set({ area })
+        set({ area });
     },
     setLuckType: (luckType) => {
-        set({ luckType })
+        set({ luckType });
     },
     setBeliefType: (beliefType) => {
-        set({ beliefType })
+        set({ beliefType });
     }
-}))
+}));

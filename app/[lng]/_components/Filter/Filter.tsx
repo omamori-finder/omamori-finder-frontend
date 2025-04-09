@@ -1,59 +1,59 @@
-import { useEffect, useRef, useState } from "react"
-import { useStore } from "@/app/[lng]/_utils/store"
+import { useEffect, useRef, useState } from "react";
+import { useStore } from "@/app/[lng]/_utils/store";
 
 const Filter = () => {
     // Filter choices
     const { area, setArea, luckType, setLuckType, beliefType, setBeliefType } =
-    useStore()
+    useStore();
 
     // Toggles
-    const [isAreaClicked, setIsAreaClicked] = useState(false)
+    const [isAreaClicked, setIsAreaClicked] = useState(false);
 
     const setAreaClicked = () => {
-        setIsAreaClicked(!isAreaClicked)
-        setIsLuckClicked(false)
-        setIsBeliefClicked(false)
-    }
+        setIsAreaClicked(!isAreaClicked);
+        setIsLuckClicked(false);
+        setIsBeliefClicked(false);
+    };
 
-    const [isLuckClicked, setIsLuckClicked] = useState(false)
+    const [isLuckClicked, setIsLuckClicked] = useState(false);
 
     const setLuckClicked = () => {
-        setIsLuckClicked(!isLuckClicked)
-        setIsAreaClicked(false)
-        setIsBeliefClicked(false)
-    }
+        setIsLuckClicked(!isLuckClicked);
+        setIsAreaClicked(false);
+        setIsBeliefClicked(false);
+    };
 
-    const [isBeliefClicked, setIsBeliefClicked] = useState(false)
+    const [isBeliefClicked, setIsBeliefClicked] = useState(false);
 
     const setBeliefClicked = () => {
-        setIsBeliefClicked(!isBeliefClicked)
-        setIsLuckClicked(false)
-        setIsAreaClicked(false)
-    }
+        setIsBeliefClicked(!isBeliefClicked);
+        setIsLuckClicked(false);
+        setIsAreaClicked(false);
+    };
 
     // Handle click outside dropdowns
-    const areaRef = useRef<HTMLDivElement>(null)
-    const luckRef = useRef<HTMLDivElement>(null)
-    const beliefRef = useRef<HTMLDivElement>(null)
+    const areaRef = useRef<HTMLDivElement>(null);
+    const luckRef = useRef<HTMLDivElement>(null);
+    const beliefRef = useRef<HTMLDivElement>(null);
 
     const handleOutsideClick = (e: MouseEvent) => {
         if (areaRef.current && !areaRef.current.contains(e.target as Node)) {
-            setIsAreaClicked(false)
+            setIsAreaClicked(false);
         }
         if (luckRef.current && !luckRef.current.contains(e.target as Node)) {
-            setIsLuckClicked(false)
+            setIsLuckClicked(false);
         }
         if (beliefRef.current && !beliefRef.current.contains(e.target as Node)) {
-            setIsBeliefClicked(false)
+            setIsBeliefClicked(false);
         }
-    }
+    };
 
     useEffect(() => {
-        document.addEventListener("mousedown", handleOutsideClick)
+        document.addEventListener("mousedown", handleOutsideClick);
         return () => {
-            document.removeEventListener("mousedown", handleOutsideClick)
-        }
-    }, [])
+            document.removeEventListener("mousedown", handleOutsideClick);
+        };
+    }, []);
 
     return (
         <div
@@ -393,7 +393,7 @@ const Filter = () => {
                                 name="belief-types"
                                 checked={beliefType === "shinto"}
                                 onChange={() => {
-                                    setBeliefType("shinto")
+                                    setBeliefType("shinto");
                                 }}
                             />
                             <span>Shinto</span>
@@ -408,7 +408,7 @@ const Filter = () => {
                                 name="belief-types"
                                 checked={beliefType === "buddhist"}
                                 onChange={() => {
-                                    setBeliefType("buddhist")
+                                    setBeliefType("buddhist");
                                 }}
                             />
                             <span>Buddhist</span>
@@ -417,7 +417,7 @@ const Filter = () => {
                 )}
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Filter
+export default Filter;

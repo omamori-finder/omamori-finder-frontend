@@ -1,38 +1,38 @@
-"use client"
-import { FormEvent, useState } from "react"
+"use client";
+import { FormEvent, useState } from "react";
 
 const Submission = () => {
-    const [shrineName, setShrineName] = useState<string>("")
-    const [googleLink, setGoogleLink] = useState<string>("")
-    const [prefecture, setPrefecture] = useState<string>("")
-    const [luck, setLuck] = useState<string>("")
-    const [belief, setBelief] = useState<string>("")
-    const [description, setDescription] = useState<string>("")
-    const [image, setImage] = useState<File | null>(null)
+    const [shrineName, setShrineName] = useState<string>("");
+    const [googleLink, setGoogleLink] = useState<string>("");
+    const [prefecture, setPrefecture] = useState<string>("");
+    const [luck, setLuck] = useState<string>("");
+    const [belief, setBelief] = useState<string>("");
+    const [description, setDescription] = useState<string>("");
+    const [image, setImage] = useState<File | null>(null);
 
     // Handle submissions
     const handleSubmit = (e: FormEvent) => {
-        e.preventDefault()
+        e.preventDefault();
         // To do: Add fetching logic when backend is ready.
-        return image
-    }
+        return image;
+    };
 
     /*
      * Image changes
      * Additional layer to ensure correct file formats are selected
      */
     const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files ? e.target.files[0] : null
+        const file = e.target.files ? e.target.files[0] : null;
         if (file) {
             if (file.type.match("image/*")) {
-                setImage(file)
+                setImage(file);
             } else {
-                alert("Please select a valid image file.")
+                alert("Please select a valid image file.");
             }
         } else {
-            setImage(null)
+            setImage(null);
         }
-    }
+    };
 
     return (
         <div className="pl-10">
@@ -166,7 +166,7 @@ const Submission = () => {
                 </div>
             </form>
         </div>
-    )
-}
+    );
+};
 
-export default Submission
+export default Submission;

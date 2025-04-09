@@ -1,7 +1,7 @@
-export const fallbackLng = "en"
-export const languages = [fallbackLng, "jp"]
-export const defaultNamespace = "translation"
-export const cookieName = "i18next"
+export const fallbackLng = "en";
+export const languages = [fallbackLng, "jp"];
+export const defaultNamespace = "translation";
+export const cookieName = "i18next";
 
 export function getOptions(
     lng = fallbackLng,
@@ -14,5 +14,5 @@ export function getOptions(
         fallbackNS: defaultNamespace,
         defaultNamespace,
         namespaces
-    }
+    };
 }

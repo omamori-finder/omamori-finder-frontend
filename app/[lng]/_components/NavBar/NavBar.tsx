@@ -1,23 +1,23 @@
-"use client"
-import { useState, useEffect } from "react"
-import Filter from "../Filter"
-import Link from "next/link"
+"use client";
+import { useState, useEffect } from "react";
+import Filter from "../Filter";
+import Link from "next/link";
 
 // eslint-disable-next-line
 const NavBar = ({ lng }: { lng: string }) => {
     // md menu
-    const [menuIsOpen, setMenuIsOpen] = useState(false)
+    const [menuIsOpen, setMenuIsOpen] = useState(false);
 
     const toggleMenuPopup = () => {
-        setMenuIsOpen(!menuIsOpen)
-    }
+        setMenuIsOpen(!menuIsOpen);
+    };
 
     // filter search
-    const [filterIsOpen, setFilterIsOpen] = useState(false)
+    const [filterIsOpen, setFilterIsOpen] = useState(false);
 
     const toggleFilterPopup = () => {
-        setFilterIsOpen(!filterIsOpen)
-    }
+        setFilterIsOpen(!filterIsOpen);
+    };
 
     /*
      *handle resize to md
@@ -29,20 +29,20 @@ const NavBar = ({ lng }: { lng: string }) => {
         const handleResize = () => {
             if (window.innerWidth >= 768) {
                 if (menuIsOpen) {
-                    setMenuIsOpen(false)
+                    setMenuIsOpen(false);
                 }
             } else if (window.innerWidth < 768) {
                 if (filterIsOpen) {
-                    setFilterIsOpen(false)
+                    setFilterIsOpen(false);
                 }
             }
-        }
-        handleResize()
-        window.addEventListener("resize", handleResize)
+        };
+        handleResize();
+        window.addEventListener("resize", handleResize);
         return () => {
-            window.removeEventListener("resize", handleResize)
-        }
-    }, [menuIsOpen, filterIsOpen])
+            window.removeEventListener("resize", handleResize);
+        };
+    }, [menuIsOpen, filterIsOpen]);
 
     return (
         <div className="sticky top-0 right-0 z-[99999]">
@@ -135,7 +135,7 @@ const NavBar = ({ lng }: { lng: string }) => {
                 </div>
             )}
         </div>
-    )
-}
+    );
+};
 
-export default NavBar
+export default NavBar;

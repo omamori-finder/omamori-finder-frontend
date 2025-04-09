@@ -1,4 +1,4 @@
-import styles from "./Map.module.css"
+import styles from "./Map.module.css";
 
 const Map = () => {
     return (
@@ -79,7 +79,7 @@ const Map = () => {
                 </g>
             </svg>
         </div>
-    )
-}
+    );
+};
 
-export default Map
+export default Map;

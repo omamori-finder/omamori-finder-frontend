@@ -1,4 +1,4 @@
-import { mount } from "@cypress/react18"
+import { mount } from "@cypress/react18";
 
 declare global {
     // eslint-disable-next-line
@@ -9,4 +9,4 @@ declare global {
     }
 }
 
-Cypress.Commands.add("mount", mount)
+Cypress.Commands.add("mount", mount);

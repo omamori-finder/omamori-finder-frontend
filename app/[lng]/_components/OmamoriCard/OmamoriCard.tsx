@@ -1,10 +1,10 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
 
 type CardProps = {
     shrineName: string;
     tag: string;
-}
+};
 
 const OmamoriCard = ({ shrineName, tag }: CardProps) => {
     return (
@@ -36,7 +36,7 @@ const OmamoriCard = ({ shrineName, tag }: CardProps) => {
                 </div>
             </article>
         </li>
-    )
-}
+    );
+};
 
-export default OmamoriCard
+export default OmamoriCard;

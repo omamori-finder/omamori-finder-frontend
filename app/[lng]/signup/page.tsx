@@ -1,13 +1,13 @@
-"use client"
-import Link from "next/link"
-import { FormEvent } from "react"
+"use client";
+import Link from "next/link";
+import { FormEvent } from "react";
 
 export default function Signup() {
     // Handle signup
     const handleSubmit = (e: FormEvent) => {
-        e.preventDefault()
-        return
-    }
+        e.preventDefault();
+        return;
+    };
 
     return (
         <div className="flex flex-col items-center w-full">
@@ -77,5 +77,5 @@ export default function Signup() {
                 </Link>
             </div>
         </div>
-    )
+    );
 }

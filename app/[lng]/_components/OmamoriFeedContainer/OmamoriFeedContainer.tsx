@@ -1,4 +1,4 @@
-import OmamoriCard from "../OmamoriCard"
+import OmamoriCard from "../OmamoriCard";
 
 const OmamoriFeedContainer = () => {
     // Only for testing
@@ -8,7 +8,7 @@ const OmamoriFeedContainer = () => {
         { key: 3, shrineName: "Ryoanji", tag: "Good Luck" },
         { key: 4, shrineName: "Ryoanji", tag: "Traffic" },
         { key: 5, shrineName: "Ryoanji", tag: "Health" }
-    ]
+    ];
 
     return (
         <ul className="list-none pl-0 m-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -20,7 +20,7 @@ const OmamoriFeedContainer = () => {
                 />
             ))}
         </ul>
-    )
-}
+    );
+};
 
-export default OmamoriFeedContainer
+export default OmamoriFeedContainer;

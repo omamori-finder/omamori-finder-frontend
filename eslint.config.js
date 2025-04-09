@@ -1,7 +1,7 @@
-import eslint from "@eslint/js"
-import tseslint from "typescript-eslint"
-import stylistic from "@stylistic/eslint-plugin"
-import stylisticJsx from "@stylistic/eslint-plugin-jsx"
+import eslint from "@eslint/js";
+import tseslint from "typescript-eslint";
+import stylistic from "@stylistic/eslint-plugin";
+import stylisticJsx from "@stylistic/eslint-plugin-jsx";
 
 export default tseslint.config(
     eslint.configs.recommended,
@@ -41,7 +41,7 @@ export default tseslint.config(
     {
         files: ["cypress", "**/*.{ts,js,tsx}"],
         rules: {
-            "@stylistic/semi": ["error", "never"],
+            "@stylistic/semi": ["error", "always"],
             "@stylistic/array-bracket-spacing": ["error", "never"],
             "@stylistic/arrow-parens": ["error", "always"],
             "@stylistic/arrow-spacing": "error",
@@ -77,4 +77,4 @@ export default tseslint.config(
         }
 
     }
-)
+);

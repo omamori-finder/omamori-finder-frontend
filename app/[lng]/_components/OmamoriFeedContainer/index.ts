@@ -1,1 +1,1 @@
-export { default } from "./OmamoriFeedContainer"
+export { default } from "./OmamoriFeedContainer";
