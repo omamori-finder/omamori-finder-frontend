@@ -48,7 +48,7 @@ export default tseslint.config(
             "@stylistic/brace-style": "error",
             "@stylistic/comma-dangle": ["error", "never"],
             "@stylistic/comma-spacing": [
-                "error", 
+                "error",
                 { "before": false, "after": true }
             ],
             "@stylistic/comma-style": ["error", "last"],
@@ -59,13 +59,15 @@ export default tseslint.config(
             "@stylistic/indent": ["error", 4],
             "@stylistic/key-spacing": ["error", { "beforeColon": false }],
             "@stylistic/keyword-spacing": ["error", { "before": true }],
+            "@stylistic/linebreak-style": ["error", "unix"],
             "@stylistic/max-len": ["error", { "code": 130,
                 "ignoreRegExpLiterals": true,
                 "ignorePattern": "^\\s*className\\s*[:=]\\s*`?.*"
             }],
             "@stylistic/multiline-comment-style": ["error", "starred-block"],
             "@stylistic/no-multi-spaces": "error",
-            "@stylistic/quotes": ["error", "double"],
+            "@stylistic/no-trailing-spaces": "error",
+            "@stylistic/quotes": ["error", "double", {"allowTemplateLiterals": "always"}],
             // jsx styling rules
             "@stylistic/jsx/jsx-closing-bracket-location": [1, "tag-aligned"],
             "@stylistic/jsx/jsx-curly-newline": ["error", {multiline: "consistent", singleline: "consistent"}],
