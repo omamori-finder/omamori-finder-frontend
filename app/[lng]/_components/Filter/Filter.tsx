@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { useStore } from "@/app/[lng]/_utils/store";
 
-const Filter = () => {
+import { TFunction } from "i18next";
+
+const Filter = ({ t }: { t: TFunction }) => {
     // Filter choices
     const { area, setArea, luckType, setLuckType, beliefType, setBeliefType } =
     useStore();
@@ -57,7 +59,8 @@ const Filter = () => {
 
     return (
         <div
-            className="relative bg-[var(--background)] block md:grid grid-cols-3 lg:grid-cols-4 gap-4 text-[var(--filter-text-color)] -ml-8 md:ml-0 md:pl-10"
+            className="relative bg-[var(--background)] block md:grid grid-cols-3 lg:grid-cols-4 gap-4 text-[var(--filter-text-color)]
+        -ml-8 md:ml-0 md:pl-10"
         >
             <div
                 className="relative bg-[var(--background)] hover:text-[var(--foreground)] transition-colors duration-300 md:w-full"
@@ -75,7 +78,7 @@ const Filter = () => {
                                 isAreaClicked ? "text-[var(--foreground)]" : ""
                             }`}
                         >
-                            <div>Area</div>
+                            <div>{t("area")}</div>
                             <svg
                                 width="7"
                                 height="5"
@@ -108,7 +111,7 @@ const Filter = () => {
                                 checked={area === "all"}
                                 onChange={() => setArea("all")}
                             />
-                            <span>All</span>
+                            <span>{t("allArea")}</span>
                         </label>
                         <label
                             htmlFor="bHokkaido"
@@ -121,7 +124,7 @@ const Filter = () => {
                                 checked={area === "hokkaido"}
                                 onChange={() => setArea("hokkaido")}
                             />
-                            <span>Hokkaido</span>
+                            <span>{t("hokkaido")}</span>
                         </label>
                         <label
                             htmlFor="bTohoku"
@@ -134,7 +137,7 @@ const Filter = () => {
                                 checked={area === "tohoku"}
                                 onChange={() => setArea("tohoku")}
                             />
-                            <span>Tohoku</span>
+                            <span>{t("tohoku")}</span>
                         </label>
                         <label
                             htmlFor="bKanto"
@@ -147,7 +150,7 @@ const Filter = () => {
                                 checked={area === "kanto"}
                                 onChange={() => setArea("kanto")}
                             />
-                            <span>Kanto</span>
+                            <span>{t("kanto")}</span>
                         </label>
                         <label
                             htmlFor="bChubu"
@@ -160,7 +163,7 @@ const Filter = () => {
                                 checked={area === "chubu"}
                                 onChange={() => setArea("chubu")}
                             />
-                            <span>Chubu</span>
+                            <span>{t("chubu")}</span>
                         </label>
                         <label
                             htmlFor="bKansai"
@@ -173,7 +176,7 @@ const Filter = () => {
                                 checked={area === "kansai"}
                                 onChange={() => setArea("kansai")}
                             />
-                            <span>Kansai</span>
+                            <span>{t("kansai")}</span>
                         </label>
                         <label
                             htmlFor="bChugoku"
@@ -186,7 +189,7 @@ const Filter = () => {
                                 checked={area === "chugoku"}
                                 onChange={() => setArea("chugoku")}
                             />
-                            <span>Chugoku</span>
+                            <span>{t("chugoku")}</span>
                         </label>
                         <label
                             htmlFor="bShikoku"
@@ -199,7 +202,7 @@ const Filter = () => {
                                 checked={area === "shikoku"}
                                 onChange={() => setArea("shikoku")}
                             />
-                            <span>Shikoku</span>
+                            <span>{t("shikoku")}</span>
                         </label>
                         <label
                             htmlFor="bKyuOki"
@@ -212,7 +215,7 @@ const Filter = () => {
                                 checked={area === "kyuoki"}
                                 onChange={() => setArea("kyuoki")}
                             />
-                            <span>Kyushu & Okinawa</span>
+                            <span>{t("kyuoki")}</span>
                         </label>
                     </div>
                 )}
@@ -233,7 +236,7 @@ const Filter = () => {
                                 isLuckClicked ? "text-[var(--foreground)]" : ""
                             }`}
                         >
-                            <div>Luck Type</div>
+                            <div>{t("luckType")}</div>
                             <svg
                                 width="7"
                                 height="5"
@@ -265,7 +268,7 @@ const Filter = () => {
                                 checked={luckType === "all"}
                                 onChange={() => setLuckType("all")}
                             />
-                            <span>All</span>
+                            <span>{t("allLuck")}</span>
                         </label>
                         <label
                             htmlFor="bGood"
@@ -278,7 +281,7 @@ const Filter = () => {
                                 checked={luckType === "good"}
                                 onChange={() => setLuckType("good")}
                             />
-                            <span>Good Luck</span>
+                            <span>{t("goodLuck")}</span>
                         </label>
                         <label
                             htmlFor="bHealth"
@@ -291,7 +294,7 @@ const Filter = () => {
                                 checked={luckType === "health"}
                                 onChange={() => setLuckType("health")}
                             />
-                            <span>Health</span>
+                            <span>{t("health")}</span>
                         </label>
                         <label
                             htmlFor="bCareer"
@@ -304,7 +307,7 @@ const Filter = () => {
                                 checked={luckType === "career"}
                                 onChange={() => setLuckType("career")}
                             />
-                            <span>Career</span>
+                            <span>{t("career")}</span>
                         </label>
                         <label
                             htmlFor="bTraffic"
@@ -317,7 +320,7 @@ const Filter = () => {
                                 checked={luckType === "traffic"}
                                 onChange={() => setLuckType("traffic")}
                             />
-                            <span>Traffic</span>
+                            <span>{t("traffic")}</span>
                         </label>
                         <label
                             htmlFor="bMarriage"
@@ -330,7 +333,7 @@ const Filter = () => {
                                 checked={luckType === "marriage"}
                                 onChange={() => setLuckType("marriage")}
                             />
-                            <span>Marriage</span>
+                            <span>{t("marriage")}</span>
                         </label>
                         <label
                             htmlFor="bPregnancy"
@@ -343,7 +346,7 @@ const Filter = () => {
                                 checked={luckType === "pregnancy"}
                                 onChange={() => setLuckType("pregnancy")}
                             />
-                            <span>Pregnancy</span>
+                            <span>{t("pregnancy")}</span>
                         </label>
                     </div>
                 )}
@@ -363,7 +366,7 @@ const Filter = () => {
                                 isBeliefClicked ? "text-[var(--foreground)]" : ""
                             }`}
                         >
-                            <div>Belief Type</div>
+                            <div>{t("beliefType")}</div>
                             <svg
                                 width="7"
                                 height="5"
@@ -396,7 +399,7 @@ const Filter = () => {
                                     setBeliefType("shinto");
                                 }}
                             />
-                            <span>Shinto</span>
+                            <span>{t("shinto")}</span>
                         </label>
                         <label
                             htmlFor="buddhist"
@@ -411,7 +414,7 @@ const Filter = () => {
                                     setBeliefType("buddhist");
                                 }}
                             />
-                            <span>Buddhist</span>
+                            <span>{t("buddhist")}</span>
                         </label>
                     </div>
                 )}
