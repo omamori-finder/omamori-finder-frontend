@@ -41,49 +41,44 @@ i18next
     });
 
 export function useTranslation<
-    Ns extends FlatNamespace,
-    KPrefix extends KeyPrefix<FallbackNs<Ns>> = undefined
+    Namespace extends FlatNamespace,
+    KeyPrefixType extends KeyPrefix<FallbackNs<Namespace>> = undefined
 >(
-    lng: string,
-    ns?: Ns,
-    options?: UseTranslationOptions<KPrefix>
-): UseTranslationResponse<FallbackNs<Ns>, KPrefix> {
-    // Store and receive current language with cookies
+    language: string,
+    namespace?: Namespace,
+    options?: UseTranslationOptions<KeyPrefixType>
+): UseTranslationResponse<FallbackNs<Namespace>, KeyPrefixType> {
     const [cookies, setCookie] = useCookies([cookieName]);
 
-    // Get default i18n useTranslation hook
-    const returnValue = useTranslationOrg(ns, options);
+    const returnValue = useTranslationOrg(namespace, options);
     const { i18n } = returnValue;
-    // If server language is different to selected language, change language to preferred language
-    if (runsOnServerSide && lng && i18n.resolvedLanguage !== lng) {
-        i18n.changeLanguage(lng);
+
+    if (runsOnServerSide && language && i18n.resolvedLanguage !== language) {
+        i18n.changeLanguage(language);
     } else {
-    // Track current active language in component
-        const [activeLng, setActiveLng] = useState(i18n.resolvedLanguage);
+        const [activeLanguage, setActiveLanguage] = useState(i18n.resolvedLanguage);
 
         useEffect(() => {
-            // Update state when language changes
-            if (activeLng === i18n.resolvedLanguage) {
+            if (activeLanguage === i18n.resolvedLanguage) {
                 return;
             }
-            setActiveLng(i18n.resolvedLanguage);
-        }, [activeLng, i18n.resolvedLanguage]);
+            setActiveLanguage(i18n.resolvedLanguage);
+        }, [activeLanguage, i18n.resolvedLanguage]);
 
-        // Switch language when preference changed
         useEffect(() => {
-            if (!lng || i18n.resolvedLanguage === lng) {
+            if (!language || i18n.resolvedLanguage === language) {
                 return;
             }
-            i18n.changeLanguage(lng);
-        }, [lng, i18n]);
+            i18n.changeLanguage(language);
+        }, [language, i18n]);
 
-        // Store language in cookie
         useEffect(() => {
-            if (cookies.i18next === lng) {
+            if (cookies.i18next === language) {
                 return;
             }
-            setCookie(cookieName, lng, { path: "/" });
-        }, [lng, cookies.i18next]);
+            setCookie(cookieName, language, { path: "/" });
+        }, [language, cookies.i18next]);
     }
+
     return returnValue;
 }
