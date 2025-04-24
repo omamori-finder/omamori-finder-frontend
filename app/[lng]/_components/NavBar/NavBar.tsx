@@ -3,8 +3,18 @@ import { useState, useEffect } from "react";
 import Filter from "../Filter";
 import Link from "next/link";
 
-// eslint-disable-next-line
+import { useTranslation } from "@/app/i18n/client";
+import { usePathname } from "next/navigation";
+import { Trans } from "react-i18next";
+
 const NavBar = ({ lng }: { lng: string }) => {
+    // language switcher
+    const { t } = useTranslation(lng, "filter");
+    const pathname = usePathname();
+
+    // get path name without the language code
+    const path = pathname.split("/").slice(2).join("/");
+
     // md menu
     const [menuIsOpen, setMenuIsOpen] = useState(false);
 
@@ -51,6 +61,26 @@ const NavBar = ({ lng }: { lng: string }) => {
                     <Link href="/">Omamori Finder</Link>
                 </div>
                 <div className="hidden md:flex items-center space-x-8">
+                    <Trans i18nKey="languageSwitcher" t={t}>
+                        {lng == "jp" ? (
+                            <Link href={`/jp/${path}`}>
+                                <strong>jp</strong>
+                            </Link>
+                        ) : (
+                            <Link href={`/jp/${path}`}>
+                                <span>jp</span>
+                            </Link>
+                        )}
+                        {lng == "en" ? (
+                            <Link href={`/en/${path}`}>
+                                <strong>en</strong>
+                            </Link>
+                        ) : (
+                            <Link href={`/en/${path}`}>
+                                <span>en</span>
+                            </Link>
+                        )}
+                    </Trans>
                     <svg
                         id="filter-toggle-button"
                         width="16"
@@ -61,17 +91,17 @@ const NavBar = ({ lng }: { lng: string }) => {
                     >
                         <path
                             d="M6.38 0A6.3 6.3 0 000 6.23a6.3 6.3 0 006.38 6.24c1.26 0 2.43-.36 3.41-.97L14.4
-                            16l1.6-1.56-4.55-4.43a6.1 6.1 0 001.31-3.78A6.3 6.3 0 006.38 0zm0
-                            1.47c2.7 0 4.88 2.12 4.88 4.76A4.82
-                            4.82 0 016.38 11 4.82 4.82 0 011.5 6.23a4.82 4.82 0 014.88-4.76z"
+                        16l1.6-1.56-4.55-4.43a6.1 6.1 0 001.31-3.78A6.3 6.3 0 006.38 0zm0 1.47c2.7 0 4.88 2.12 4.88 4.76A4.82
+                        4.82 0 016.38 11 4.82 4.82 0 011.5 6.23a4.82 4.82 0 014.88-4.76z"
                             fill="currentColor"
                         />
                     </svg>
+
                     <Link href="/about" className="hover:underline">
-                        About
+                        {t("about")}
                     </Link>
                     <Link href="/login" className="hover:underline">
-                        Login
+                        {t("login")}
                     </Link>
                 </div>
                 <div
@@ -92,6 +122,26 @@ const NavBar = ({ lng }: { lng: string }) => {
                     className="fixed top-0 left-0 right-0 bottom-0 p-8 bg-[var(--background)] flex items-center justify-left text-[var(--filter-text-color)] w-full"
                 >
                     <div className="fixed top-8 right-10 flex items-center space-x-4">
+                        <Trans i18nKey="languageSwitcher" t={t}>
+                            {lng == "jp" ? (
+                                <Link href={`/jp/${path}`}>
+                                    <strong>jp</strong>
+                                </Link>
+                            ) : (
+                                <Link href={`/jp/${path}`}>
+                                    <span>jp</span>
+                                </Link>
+                            )}
+                            {lng == "en" ? (
+                                <Link href={`/en/${path}`}>
+                                    <strong>en</strong>
+                                </Link>
+                            ) : (
+                                <Link href={`/en/${path}`}>
+                                    <span>en</span>
+                                </Link>
+                            )}
+                        </Trans>
                         <div onClick={toggleMenuPopup}>
                             <svg
                                 width="19"
@@ -110,19 +160,19 @@ const NavBar = ({ lng }: { lng: string }) => {
                             </svg>
                         </div>
                     </div>
-                    <div className={"flex flex-col items-left text-base w-full"}>
-                        <Filter />
+                    <div className={`flex flex-col items-left text-base w-full`}>
+                        <Filter t={t} />
                         <Link
                             className="h-16 flex items-center hover:underline text-[var(--filter-text-color)]"
                             href="/login"
                         >
-                            Login
+                            {t("login")}
                         </Link>
                         <Link
                             className="h-16 flex items-center hover:underline text-[var(--filter-text-color)]"
                             href="/about"
                         >
-                            About
+                            {t("about")}
                         </Link>
                     </div>
                 </div>
@@ -131,7 +181,7 @@ const NavBar = ({ lng }: { lng: string }) => {
             {/* Toggling Filter on non-mobile screens */}
             {filterIsOpen && (
                 <div id="filter">
-                    <Filter />
+                    <Filter t={t} />
                 </div>
             )}
         </div>
